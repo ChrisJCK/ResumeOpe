@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Juckler Christian 3TL1}
+\title{}
+\begin{document}
+\begin{center}
+{\bfseries Résumé opérationnel}\\
+{\bfseries Installation, configuration et comparaison de solutions professionnelles d'accès à distance}\\
+Auteur : Juckler Christian 3TL1\\
+Rapporteur : Virginie Van den Schrieck
+\end{center}
+Les accès distants sont un enjeu essentiel des entreprises à l'heure actuelle.
+Mais la mise à disposition des ressources internes vers l'extérieur n'est pas sans risques.
+Il est donc important de sécuriser les connexions entre les clients distants et les ressources internes.
+Cet objectif doit se faire en ne pénalisant pas l'utilisateur.\\
+
+Ce travail a été effectué en réalisant une infrastructure similaire à celle du PME et en utilisant les technologies d'accès distant proposées par Juniper, Cisco et Microsoft.\\
+
+La première étape consiste à configurer un domaine répondant aux besoins standards d'une entreprise, à savoir un serveur mail, un serveur de fichier et un intranet.
+L'infrastructure est composée d'un "domain controller" dont le domaine est \texttt{labotfe.be}, d'un serveur exchange, d'un intranet et d'un "DFS Namespace". 
+
+Le deuxième étape est la configuration des passerelles et l'intégration de la passerelle dans le réseau de l'entreprise. 
+La solution Juniper utilise une passerelle SLL placée dans une DMZ.
+La solution Windows utilise un serveur dédié pour le "Remote Access", qui est aussi placé dans une DMZ.
+La solution Cisco intègre la passerelle dans le firewall.
+Les configurations sont réalisées à l'aide des guides d'administrations fournis par les fabricants.
+
+La troisième étape est la réalisation des tests pour mener à une comparaison des différentes solutions.
+
+Lors de ce travail, j'ai réalisé un comparatif des solutions Cisco, Juniper et Microsoft d'accès distants.
+Pour les solutions Cisco et Juniper, j'ai séparé les résultats selon la méthode d'accès.
+Pour ces deux solutions, le client peut se connecter soit via un portail Web, soit via un client logiciel.
+Quant à la solution Microsoft, elle n'utilise pas de client logiciel, ni de portail.\\
+
+Le comparatif réalisé montre que les solutions sont similaires en termes de fonctionnalités.
+En effet, toutes les solutions testées arrivent à accéder à l'ensemble des ressources prévues. 
+Les différences se situent au niveau de l'interface graphique et au niveau de la facilité de configuration.
+
+La solution Juniper est la plus agréable à utiliser. 
+Son interface graphique est intuitive, et sa configuration est claire.
+
+La solution Microsoft tire son épingle du jeu et est une bonne surprise.
+Elle est relativement simple à configurer, on peut lui reprocher un manque de transparence sur son fonctionnement.
+En effet, toutes les opérations sont effectuées par le système sans que l'utilisateur intervienne.
+On peut aussi pointer qu'elle n'est utilisable qu'avec des ordinateurs utilisant des versions spécifiques des systèmes d'exploitation Windows 7, 8 et 8.1.
+Pour accéder aux mails avec un smartphone, il faut donc utiliser une autre technologie.
+
+La solution Cisco déçoit car son interface est mal conçue et le logiciel est buggué.
+La configuration est lourde, et les modifications doivent être répétées à plusieurs endroits pour qu'elles soient totalement effectives.\\
+
+L'un des avantages de la solution Microsoft par rapport aux autres solutions réside dans le fait que les machines bien que distantes sont toujours liées au réseau de l'entreprise.
+Le gestionnaire du parc informatique est donc capable de patcher les machines distantes de la même manière que si elles étaient en interne.
+Cette capacité réduit le risque que ces machines soient out-of-date sur les mises à jour de sécurité critiques.
+\end{document}
